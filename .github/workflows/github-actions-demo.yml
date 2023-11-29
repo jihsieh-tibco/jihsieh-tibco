@@ -16,4 +16,15 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-
+   
+  Test-Artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - name: archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: markdown
+          path: |
+            README.md
