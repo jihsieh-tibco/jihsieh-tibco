@@ -30,7 +30,8 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_OI_DEVOPS }}
+          #SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_OI_DEVOPS }}
+          SLACK_WEBHOOK_URL: https://smee.io/ZOiYUcvyGqrA5uh
   Test-Artifacts:
     runs-on: ubuntu-latest
     steps:
