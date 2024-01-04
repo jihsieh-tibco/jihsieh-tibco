@@ -26,6 +26,8 @@ jobs:
   Test-Webhook-to-slack:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          env
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
