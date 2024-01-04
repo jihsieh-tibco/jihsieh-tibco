@@ -28,6 +28,8 @@ jobs:
     steps:
       - run: |
           env
+          echo
+          cat ${GITHUB_EVENT_PATH}
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
