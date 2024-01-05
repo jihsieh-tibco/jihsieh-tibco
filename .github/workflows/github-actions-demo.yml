@@ -32,7 +32,7 @@ jobs:
           env
           echo
           cat ${GITHUB_EVENT_PATH} | jq '. | {repository: .repository.full_name, author: .head_commit.author.username, compare: .compare}' > ./slack-webhook.json
-      - name: Send GitHub Action trigger data to Slack workflow
+      - name: Send GitHub Action trigger data to Slack workflow - 01
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
         with:
