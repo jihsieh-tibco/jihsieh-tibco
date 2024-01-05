@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          apt -y update
+          apt -y install jq
           env
           echo
           cat ${GITHUB_EVENT_PATH} | jq '.|{author: .head_commit.author.username, compare: .compare}' > /slack-webhook.json
