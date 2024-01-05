@@ -31,7 +31,7 @@ jobs:
           #sudo apt install -y jq
           env
           echo
-          cat ${GITHUB_EVENT_PATH} | jq '. | {repository: .repository.full_name, author: .head_commit.author.username, compoare: .compare}' > ./slack-webhook.json
+          cat ${GITHUB_EVENT_PATH} | jq '. | {repository: .repository.full_name, author: .head_commit.author.username, compare: .compare}' > ./slack-webhook.json
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
