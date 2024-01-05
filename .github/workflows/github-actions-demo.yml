@@ -29,10 +29,12 @@ jobs:
       - run: |
           env
           echo
-          cat ${GITHUB_EVENT_PATH}
+          cat ${GITHUB_EVENT_PATH} | jq '.|{author: .head_commit.author.username, compare: .compare}' > /slack-webhook.json
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload-file-path: "/slack-webhook.json"
         env:
           #SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_OI_DEVOPS }}
           SLACK_WEBHOOK_URL: https://smee.io/ZOiYUcvyGqrA5uh
