@@ -38,8 +38,8 @@ jobs:
         with:
           payload-file-path: "./slack-webhook.json"
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_OI_DEVOPS }}
-          #SLACK_WEBHOOK_URL: https://smee.io/ZOiYUcvyGqrA5uh
+          #SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_OI_DEVOPS }}
+          SLACK_WEBHOOK_URL: https://smee.io/ZOiYUcvyGqrA5uh
   Test-Artifacts:
     runs-on: ubuntu-latest
     steps:
